@@ -13,6 +13,16 @@
 
 ## Getting started
 
+### Generate your faction file in EverQuest Legends
+
+1. Log in to the character whose factions you want to track.
+2. Enter **`/outputfile faction`** in the in-game chat window. The command uses singular `faction`, not `factions`.
+3. Open your **EverQuest Legends installation directory**, where the game executable is located. The TXT export is saved in that top-level game folder, **not** the `Logs` subfolder.
+4. Find the newly created file, typically named **`Character_server-CLASS-Factions.txt`** on Legends (for example `Example_qeynos-WAR-Factions.txt`).
+5. On the companion webpage, select the TXT file under **Import latest faction TXT**, then click **Read File**.
+
+The import automatically confirms factions at maximum standing (2,000). A faction-based race is marked unlocked only once **every required faction** has been confirmed. Previously confirmed factions remain banked even if your standing drops. Quest-based races still require manual completion. **Important:** the faction TXT file reports standings, not whether the in-game achievement was claimed. Verify actual race access in game and correct any mistaken checkboxes manually.
+
 Open the live companion, choose your faction export, and click **Read File**. Expand race confirmation counts, verify achievements in game, and consult the suggested route. See the [user guide](docs/USER_GUIDE.md) for the expected import format and detailed instructions. Alternatively download `index.html` and open it locally; no build step is required.
 
 ## Privacy and limitations
