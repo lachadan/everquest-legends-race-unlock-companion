@@ -2,7 +2,15 @@
 
 ## [Unreleased]
 
-- No application changes yet.
+- No changes recorded yet.
+
+## v3.0.1
+
+- Automatically confirm imported factions at maximum standing (2,000).
+- Automatically mark faction-based races unlocked once all their required factions are confirmed.
+- Preserve previously confirmed faction achievements when subsequent imports show lower standings.
+- Add `/outputfile faction` instructions to the application and README, including the expected export file location and filename.
+- Keep quest-based race unlocks manual. Note that maximum faction standing does not independently prove the in-game unlock achievement was claimed.
 
 ## v3.0.0
 
