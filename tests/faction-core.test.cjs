@@ -49,3 +49,18 @@ test('already unlocked race is not announced again and quest races are not auto-
   assert.deepEqual(Array.from(next.unlocked),[]);
   assert.equal(next.done['Half Elf'],false);
 });
+
+const compare=(before,after)=>ctx.compareFactionImports(before,after);
+test('comparison reports gains, losses, new and missing faction rows',()=>{
+  const before=parse(file(row(305,100),row(320,1000),row(328,100)));
+  const after=parse(file(row(305,200),row(320,500),row(722,2000)));
+  const changes=compare(before,after);
+  assert.equal(changes.find(x=>x.ID==='305').delta,100);
+  assert.equal(changes.find(x=>x.ID==='320').delta,-500);
+  assert.equal(changes.find(x=>x.ID==='722').type,'new');
+  assert.equal(changes.find(x=>x.ID==='328').type,'missing');
+});
+test('comparison returns empty when standings are unchanged',()=>{
+  const rows=parse(file(row(305,2000)));
+  assert.equal(compare(rows,rows).length,0);
+});
